@@ -495,6 +495,11 @@ onInput("w", () => {
     getFirst(mousePointer).y -= 1
   } else if (phase === "III.ii") {
     getFirst(brain).y -= 1
+  } else if (phase === "IV.i") {
+    getFirst(player[0]).y += 1
+    getFirst(player[1]).y += 1
+    getFirst(player[2]).y += 1
+    getFirst(player[3]).y += 1
   }
 })
 onInput("s", () => {
@@ -502,6 +507,11 @@ onInput("s", () => {
     getFirst(mousePointer).y += 1
   } else if (phase === "III.ii") {
     getFirst(brain).y += 1
+  } else if (phase === "IV.i") {
+    getFirst(player[2]).y -= 1
+    getFirst(player[3]).y -= 1
+    getFirst(player[0]).y -= 1
+    getFirst(player[1]).y -= 1
   }
 })
 onInput("a", () => {
@@ -509,6 +519,11 @@ onInput("a", () => {
     getFirst(mousePointer).x -= 1
   } else if (phase === "III.ii") {
     getFirst(brain).x -= 1
+  } else if (phase === "IV.i") {
+    getFirst(player[0]).x -= 1
+    getFirst(player[2]).x -= 1
+    getFirst(player[1]).x -= 1
+    getFirst(player[3]).x -= 1
   }
 })
 onInput("d", () => {
@@ -516,6 +531,11 @@ onInput("d", () => {
     getFirst(mousePointer).x += 1
   } else if (phase === "III.ii") {
     getFirst(brain).x += 1
+  } else if (phase === "IV.i") {
+    getFirst(player[1]).x += 1
+    getFirst(player[3]).x += 1
+    getFirst(player[0]).x += 1
+    getFirst(player[2]).x += 1
   }
 })
 
@@ -717,6 +737,7 @@ onInput("k", async () => {
       await sleep(1_500)
       clearText()
       setMap(maps.waitForPassingRobot)
+      phase = "IV.i"
 
       await sleep(1_000)
       getFirst(robot2).x += 1
