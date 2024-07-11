@@ -1,2 +1,2 @@
-# kilroy-saves-the-game
-A Sprig game I made for the hackclub arcade
+# Kilroy Saves The Game
+A Sprig game I made for the hackclub arcade!
