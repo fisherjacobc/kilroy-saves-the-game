@@ -619,7 +619,7 @@ C...NNNN..`,
 ----ry----
 ----..----
 ----..----
-.........R
+T.........
 ----..----
 ----..----
 ----..----`
@@ -717,6 +717,72 @@ onInput("k", async () => {
       await sleep(1_500)
       clearText()
       setMap(maps.waitForPassingRobot)
+
+      await sleep(1_000)
+      getFirst(robot2).x += 1
+      
+      await sleep(Math.floor(Math.random()) + 1)
+      getFirst(robot2).x += 1
+      getFirst(player[2]).y += 1
+      getFirst(player[3]).y += 1
+      getFirst(player[0]).y += 1
+      getFirst(player[1]).y += 1
+
+      await sleep(1_000)
+      getFirst(robot2).x += 1
+      
+      await sleep(Math.floor(Math.random() * 1_000) + 1_000)
+      getFirst(robot2).x += 1
+      getFirst(player[2]).y += 1
+      getFirst(player[3]).y += 1
+      getFirst(player[0]).y += 1
+      getFirst(player[1]).y += 1
+
+      await sleep(1_000)
+      getFirst(robot2).x += 1
+      
+      await sleep(Math.floor(Math.random() * 1_000) + 1_000)
+      getFirst(robot2).x += 1
+
+      await sleep(1_000)
+      getFirst(robot2).x += 1
+      getFirst(player[2]).y += 1
+      getFirst(player[3]).y += 1
+      getFirst(player[0]).y += 1
+      getFirst(player[1]).y += 1
+      
+      await sleep(Math.floor(Math.random() * 1_000) + 1_000)
+      getFirst(robot2).x += 1
+      getFirst(player[2]).y += 1
+      getFirst(player[3]).y += 1
+      getFirst(player[0]).y += 1
+      getFirst(player[1]).y += 1
+
+      await sleep(1_000)
+      getFirst(robot2).x += 1
+      getFirst(player[2]).y += 1
+      getFirst(player[3]).y += 1
+      getFirst(player[0]).y += 1
+      getFirst(player[1]).y += 1
+
+      await sleep(Math.floor(Math.random() * 1_000) + 1_000)
+      clearTile(getFirst(robot2).x, getFirst(robot2).y)
+      getFirst(player[2]).y += 1
+      getFirst(player[3]).y += 1
+      getFirst(player[0]).y += 1
+      getFirst(player[1]).y += 1
+
+      await sleep(1_000)
+      clearTile(getFirst(player[2]).x, getFirst(player[2]).y)
+      clearTile(getFirst(player[3]).x, getFirst(player[3]).y)
+      getFirst(player[0]).y += 1
+      getFirst(player[1]).y += 1
+
+      await sleep(1_000)
+      clearTile(getFirst(player[0]).x, getFirst(player[0]).y)
+      clearTile(getFirst(player[1]).x, getFirst(player[1]).y)
+
+      setMap(maps.blankIntermission)
     } else {
       setMap(maps.emptyDrawer)
       addText("Wrong Drawer ):", {
