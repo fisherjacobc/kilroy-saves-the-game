@@ -4,7 +4,7 @@
 @tags ['kilroy', 'frc']
 @addedOn 2024-07-08
 */
-const quick = false
+const quick = true
 const speed = quick ? 0.25 : 1.0
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay * speed))
 
@@ -613,7 +613,16 @@ s..NN...sn
 ...T....R.
 .s...N....
 ..R..NN..N
-C...NNNN..`
+C...NNNN..`,
+  waitForPassingRobot: map`
+----kL----
+----ry----
+----..----
+----..----
+.........R
+----..----
+----..----
+----..----`
 };
 
 let inputKDebounce = false;
@@ -694,7 +703,20 @@ onInput("k", async () => {
       phase = "IV"
       clearText()
       setMap(maps.blankIntermission)
-      
+      addText("Let's get this to", {
+        x: 1,
+        y: 6,
+        color: color`2`
+      })
+      addText("the team!", {
+        x: 3,
+        y: 7,
+        color: color`2`
+      })
+
+      await sleep(1_500)
+      clearText()
+      setMap(maps.waitForPassingRobot)
     } else {
       setMap(maps.emptyDrawer)
       addText("Wrong Drawer ):", {
