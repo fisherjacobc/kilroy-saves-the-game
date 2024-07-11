@@ -606,14 +606,14 @@ B.-..-.-......-
 -..s.....-
 ----------`,
   practiceField: map`
-s..NN...sn
-.R.N...T..
-..........
-.N..s..s..
-...T....R.
-.s...N....
-..R..NN..N
-C...NNNN..`,
+NN..N.../n
+N.s.N.s...
+.T.....R..
+.......d..
+sN..N.....
+.R..d.....
+kL....s.N.
+ry..NT.NNN`,
   waitForPassingRobot: map`
 ----kL----
 ----ry----
@@ -783,6 +783,8 @@ onInput("k", async () => {
       clearTile(getFirst(player[1]).x, getFirst(player[1]).y)
 
       setMap(maps.blankIntermission)
+      await sleep(500)
+      setMap(maps.practiceField)
     } else {
       setMap(maps.emptyDrawer)
       addText("Wrong Drawer ):", {
