@@ -844,7 +844,7 @@ onInput("k", async () => {
 afterInput(async () => {
   if (phase === "III.ii") {
     if (tilesWith(brain)[0][1]?.type !== correctBolt) return;
-    phase === "III.iii"
+    phase = "III.iii"
 
     setMap(maps.blankIntermission)
     clearText()
@@ -889,6 +889,54 @@ afterInput(async () => {
         {x: getFirst(player[3]).x, y: getFirst(player[3]).y},
       ]
     }
+
+    if (!(getFirst(player[1]).x === 9 && getFirst(player[1]).y === 1)) return;
+    phase = "IV.iii"
+
+    await sleep(500)
+    setMap(maps.movingRobotIn)
+    getFirst(robot).type = brokenRobot
+
+    await sleep(1_000)
+    addText("Student 1:", {
+      x: 1,
+      y: 1
+    })
+    addText("You got the bolt!", {
+      x: 1,
+      y: 2
+    })
+
+    await sleep(2_000)
+    addText("Student 3:", {
+      x: 1,
+      y: 1
+    })
+    addText("Hooray!!", {
+      x: 1,
+      y: 2
+    })
+
+    await sleep(2_000)
+    addText("Student 2:", {
+      x: 1,
+      y: 1
+    })
+    addText("Okay, let's put this on", {
+      x: 1,
+      y: 2
+    })
+
+    playTune(tune`
+291.2621359223301,
+291.2621359223301: A5^291.2621359223301 + B5/291.2621359223301,
+291.2621359223301: B5/291.2621359223301 + A5^291.2621359223301,
+291.2621359223301: B5/291.2621359223301 + A5^291.2621359223301,
+291.2621359223301: B5/291.2621359223301 + A5^291.2621359223301,
+291.2621359223301: B5/291.2621359223301 + A5^291.2621359223301,
+7572.8155339805835`)
+    await sleep(2_000)
+    getFirst(brokenRobot).type = robot
   }
 })
 
