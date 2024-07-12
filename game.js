@@ -4,7 +4,7 @@
 @tags ['kilroy', 'frc']
 @addedOn 2024-07-08
 */
-const quick = true
+const quick = false
 const speed = quick ? 0.25 : 1.0
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay * speed))
 
@@ -898,6 +898,7 @@ afterInput(async () => {
     getFirst(robot).type = brokenRobot
 
     await sleep(1_000)
+    clearText()
     addText("Student 1:", {
       x: 1,
       y: 1
@@ -908,6 +909,7 @@ afterInput(async () => {
     })
 
     await sleep(2_000)
+    clearText()
     addText("Student 3:", {
       x: 1,
       y: 1
@@ -918,11 +920,12 @@ afterInput(async () => {
     })
 
     await sleep(2_000)
+    clearText()
     addText("Student 2:", {
       x: 1,
       y: 1
     })
-    addText("Okay, let's put this on", {
+    addText("Ok, let's do this!", {
       x: 1,
       y: 2
     })
@@ -937,6 +940,55 @@ afterInput(async () => {
 7572.8155339805835`)
     await sleep(2_000)
     getFirst(brokenRobot).type = robot
+
+    await sleep(1_000)
+    getFirst(npc[1]).y += 1
+    getFirst(npc[2]).y -= 1
+    getFirst(npc[0]).y += 1
+    await sleep(250)
+    getFirst(npc[1]).y -= 1
+    getFirst(npc[2]).y += 1
+    getFirst(npc[0]).y -= 1
+    await sleep(250)
+    getFirst(npc[1]).y -= 1
+    getFirst(npc[2]).y += 1
+    getFirst(npc[0]).y -= 1
+    await sleep(250)
+    getFirst(npc[1]).y += 1
+    getFirst(npc[2]).y -= 1
+    getFirst(npc[0]).y += 1
+
+    clearText()
+    addText("Student 1:", {
+      x: 1,
+      y: 1
+    })
+    addText("Let's play!!", {
+      x: 1,
+      y: 2
+    })
+
+    await sleep(2_000)
+    setMap(maps.blankIntermission)
+    clearText()
+    addText("They would go on", {
+      x: 1,
+      y: 6,
+      color: color`2`
+    })
+    addText("to win the game", {
+      x: 1,
+      y: 7,
+      color: color`2`
+    })
+
+    await sleep(3_000)
+    clearText()
+    addText("THE END!", {
+      x: 3,
+      y: 6,
+      color: color`2`
+    })
   }
 })
 
