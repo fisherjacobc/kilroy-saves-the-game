@@ -471,7 +471,7 @@ LLLLLLLLLLLLL330
 0000000000000000` ]
 )
 
-setSolids([...player, mousePointer, brain, blankDark, note, sidewaysNote, robot, robot2, brokenRobot, drill, npc[0]])
+setSolids([...player, mousePointer, brain, checkeredBackground, blankDark, note, sidewaysNote, robot, robot2, brokenRobot, drill, npc[0]])
 
 setPushables({
   [player[0]]: []
@@ -626,14 +626,14 @@ B.-..-.-......-
 -..s.....-
 ----------`,
   practiceField: map`
-NN..N.../n
-N.s.N.s...
-.T.....R..
-.......d..
+NNxxNxxx/n
+NxsxNxsx..
+xT.....R..
+xx.....d..
 sN..N.....
-.R..d.....
-kL....s.N.
-ry..NT.NNN`,
+xR..d.....
+kL..xxsxNx
+ry..NTxNNN`,
   waitForPassingRobot: map`
 ----kL----
 ----ry----
@@ -878,7 +878,6 @@ afterInput(async () => {
 
     if (stayedSame) {
       oldKilroyPos.forEach((pos, index) => {
-        console.log(index)
         getFirst(player[index]).x = pos.x
         getFirst(player[index]).y = pos.y
       })
